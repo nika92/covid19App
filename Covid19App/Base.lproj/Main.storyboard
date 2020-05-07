@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ArJ-vE-mSE">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--StatsVC-->
+        <scene sceneID="4S2-Bw-Mg8">
+            <objects>
+                <viewController id="6yE-yu-FIQ" customClass="StatsVC" customModule="Covid19App" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9ht-lW-jUT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1nJ-6f-7OK">
+                                <rect key="frame" x="16" y="98" width="382" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="HsM-99-MYH"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="List"/>
+                                    <segment title="My Country"/>
+                                    <segment title="Global"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlAction:" destination="6yE-yu-FIQ" eventType="valueChanged" id="BNN-AQ-cZS"/>
+                                </connections>
+                            </segmentedControl>
+                            <searchBar contentMode="redraw" placeholder="Country" translatesAutoresizingMaskIntoConstraints="NO" id="gwV-0I-dZd">
+                                <rect key="frame" x="8" y="141" width="398" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="3fI-EM-Wnc"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3XM-4g-dD4">
+                                <rect key="frame" x="16" y="195" width="382" height="693"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="3XM-4g-dD4" firstAttribute="top" secondItem="gwV-0I-dZd" secondAttribute="bottom" constant="10" id="BRz-z3-E3x"/>
+                            <constraint firstItem="3XM-4g-dD4" firstAttribute="leading" secondItem="BLk-yT-gCa" secondAttribute="leading" constant="16" id="WAf-HO-ddY"/>
+                            <constraint firstItem="1nJ-6f-7OK" firstAttribute="leading" secondItem="BLk-yT-gCa" secondAttribute="leading" constant="16" id="XaG-9y-e0C"/>
+                            <constraint firstItem="gwV-0I-dZd" firstAttribute="leading" secondItem="BLk-yT-gCa" secondAttribute="leading" constant="8" id="ZDM-Ew-Emd"/>
+                            <constraint firstItem="BLk-yT-gCa" firstAttribute="trailing" secondItem="3XM-4g-dD4" secondAttribute="trailing" constant="16" id="ZOB-yP-0SR"/>
+                            <constraint firstAttribute="bottom" secondItem="3XM-4g-dD4" secondAttribute="bottom" constant="8" id="lhN-x7-k8F"/>
+                            <constraint firstItem="BLk-yT-gCa" firstAttribute="trailing" secondItem="gwV-0I-dZd" secondAttribute="trailing" constant="8" id="lyr-gZ-VDM"/>
+                            <constraint firstItem="1nJ-6f-7OK" firstAttribute="top" secondItem="BLk-yT-gCa" secondAttribute="top" constant="10" id="w4W-Af-bz1"/>
+                            <constraint firstItem="gwV-0I-dZd" firstAttribute="top" secondItem="1nJ-6f-7OK" secondAttribute="bottom" constant="12" id="wm2-iy-eMh"/>
+                            <constraint firstItem="BLk-yT-gCa" firstAttribute="trailing" secondItem="1nJ-6f-7OK" secondAttribute="trailing" constant="16" id="z13-qN-EHF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BLk-yT-gCa"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="V5R-Rm-nLI"/>
+                    <connections>
+                        <outlet property="searchBar" destination="gwV-0I-dZd" id="Rvt-Dg-YcL"/>
+                        <outlet property="searchBarHeight" destination="3fI-EM-Wnc" id="hiC-aJ-7af"/>
+                        <outlet property="segmentedControl" destination="1nJ-6f-7OK" id="Jlr-a0-fZY"/>
+                        <outlet property="tableView" destination="3XM-4g-dD4" id="OPd-cj-D7W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="geX-QF-ZRe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2815.9420289855075" y="138.61607142857142"/>
+        </scene>
+        <!--Custom Tab BarC-->
+        <scene sceneID="DQP-4U-sgq">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ArJ-vE-mSE" customClass="CustomTabBarC" customModule="Covid19App" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="eWV-Sp-l18"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vtb-2w-Wdm">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="nao-dm-4Fe" kind="relationship" relationship="viewControllers" id="XbI-d1-y4e"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="555-do-Kfe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="995.65217391304361" y="138.61607142857142"/>
+        </scene>
+        <!--Stats-->
+        <scene sceneID="PRi-1b-O8Z">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nao-dm-4Fe" customClass="CustomNavC" customModule="Covid19App" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Stats" image="stats_icon" id="EZe-Ob-aSE">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aWR-Xn-ED8">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6yE-yu-FIQ" kind="relationship" relationship="rootViewController" id="4Cj-eK-yOe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J54-Pi-eV9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1905.7971014492755" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="stats_icon" width="24" height="24"/>
+    </resources>
+</document>
