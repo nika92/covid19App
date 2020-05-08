@@ -21,6 +21,10 @@ class Case: NSObject {
     public var totalDeaths      = 0
     public var totalRecovered   = 0
     
+    override init () {
+        
+    }
+    
     init (dict: [String: Any]) {
         
         country         = dict["Country"] as! String

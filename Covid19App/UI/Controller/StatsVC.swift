@@ -12,30 +12,56 @@ class StatsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if searchStarted {
-            return searchedItems.count
+        if listSelected {
+            
+            if searchStarted {
+                return searchedItems.count
+            }
+            return items.count
+            
+        } else {
+            return 1
         }
-        return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CaseCell.reuseIdentifier, for: indexPath) as? CaseCell else {
-            preconditionFailure("Invalid cell type")
-        }
-        cell.selectionStyle = .none
-        
-        if searchStarted {
-            cell.setupWithCase(_case: searchedItems[indexPath.row])
+        if listSelected {
+            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: CaseCell.reuseIdentifier, for: indexPath) as? CaseCell else {
+                preconditionFailure("Invalid cell type")
+            }
+            cell.selectionStyle = .none
+            
+            if searchStarted {
+                cell.setupWithCase(_case: searchedItems[indexPath.row])
+            } else {
+                cell.setupWithCase(_case: items[indexPath.row])
+            }
+            
+            return cell
         } else {
-            cell.setupWithCase(_case: items[indexPath.row])
+            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: TotalCasesCell.reuseIdentifier, for: indexPath) as? TotalCasesCell else {
+                preconditionFailure("Invalid cell type")
+            }
+            cell.selectionStyle = .none
+            
+            if let _totalCase = self.totalCase {
+                cell.setupWithTotalCases(totalCases: _totalCase)
+            }
+            
+            return cell
         }
-        
-        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44
+        
+        if listSelected {
+            return 44
+        } else {
+            return 260
+        }
     }
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -46,7 +72,11 @@ class StatsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
     
     var items           = Array<Case>()
     var searchedItems   = Array<Case>()
+    
+    var totalCase: TotalCases?
+    
     var searchStarted   = false
+    var listSelected    = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,10 +114,28 @@ class StatsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
     @IBAction func segmentedControlAction(_ sender: Any) {
         
         if segmentedControl.selectedSegmentIndex == 0 {
+            
             showSearchBar(show: true)
+            listSelected = true
+            tableView.separatorStyle = .singleLine
+            
+            self.reloadTableView()
+            
         } else {
+            
             showSearchBar(show: false)
+            listSelected = false
+            tableView.separatorStyle = .none
+            
+            if segmentedControl.selectedSegmentIndex == 2 {
+                self.fetchTotalGlobalCases()
+            } else {
+                self.totalCase = CaseProvider.shared.getToTalLocalCases()
+                reloadTableView()
+            }
         }
+        
+        view.endEditing(true)
     }
     
     func showSearchBar (show: Bool) {
@@ -111,12 +159,29 @@ class StatsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
                 self.items = response
                 
                 DispatchQueue.main.async {
-                    self.tableView.reloadData()
+                    self.reloadTableView()
                 }
                 
             }, errorHandler: {(error) -> (Void) in
                 self.items = CaseProvider.shared.getSavedCases()
                 self.handleErrorCallback()
+            })
+        }
+    }
+    
+    func fetchTotalGlobalCases () {
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            
+            CaseProvider.shared.getTotalGlobalCases(completionHandler: {(response) -> (Void) in
+                
+                self.totalCase = response
+                DispatchQueue.main.async {
+                    self.reloadTableView()
+                }
+                
+            }, errorHandler: {(error) -> (Void) in
+                self.handleTotalCasesErrorCallback()
             })
         }
     }
@@ -129,6 +194,29 @@ class StatsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
         tableView.backgroundColor = .clear
         
         tableView.register(UINib(nibName: CaseCell.reuseIdentifier, bundle: Bundle.main), forCellReuseIdentifier: CaseCell.reuseIdentifier)
+        tableView.register(UINib(nibName: TotalCasesCell.reuseIdentifier, bundle: Bundle.main), forCellReuseIdentifier: TotalCasesCell.reuseIdentifier)
+    }
+    
+    func reloadTableView () {
+        
+        let range = NSMakeRange(0, self.tableView.numberOfSections)
+        let sections = NSIndexSet(indexesIn: range)
+        self.tableView.reloadSections(sections as IndexSet, with: .automatic)
+    }
+    
+    func handleTotalCasesErrorCallback () {
+        
+        self.totalCase = CaseProvider.shared.getSavedGlobalCases()
+        
+        if self.totalCase!.isEmpty {
+            //Show no data notification
+        } else {
+            //Show saved data notification
+        }
+        
+        DispatchQueue.main.async {
+            self.reloadTableView()
+        }
     }
     
     func handleErrorCallback () {
@@ -138,19 +226,25 @@ class StatsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
         } else {
             //Show saved data notification
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+                self.reloadTableView()
             }
         }
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        let result = CaseProvider.shared.getCaseByKeyword(keyword: searchText)
-        
-        searchStarted = true
-        searchedItems = result
-        
-        tableView.reloadData()
+        if searchText.count > 0 {
+            
+            let result = CaseProvider.shared.getCaseByKeyword(keyword: searchText)
+            
+            searchStarted = true
+            searchedItems = result
+            
+            self.reloadTableView()
+            
+        } else {
+            endSearch()
+        }
     }
     
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
@@ -164,7 +258,7 @@ class StatsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
         
         searchStarted = false
         searchedItems.removeAll()
-        tableView.reloadData()
+        self.reloadTableView()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

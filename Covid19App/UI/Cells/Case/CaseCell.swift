@@ -23,7 +23,7 @@ class CaseCell: UITableViewCell {
         styleView()
     }
     
-    func styleView () {
+    private func styleView () {
         
         backgroundColor = .clear
         
@@ -32,7 +32,7 @@ class CaseCell: UITableViewCell {
         deathLbl.textColor      = StyleUtils.appRedColor()
     }
     
-    func setupWithCase (_case: Case) {
+    public func setupWithCase (_case: Case) {
         
         countryLbl.text     = _case.country
         totalLbl.text       = String(_case.totalConfirmed)

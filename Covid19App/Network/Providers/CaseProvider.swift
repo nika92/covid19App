@@ -66,10 +66,55 @@ class CaseProvider {
     public func getCaseByKeyword (keyword: String) -> Array<Case> {
         
         var result = Array<Case>()
+        let _cases = getSavedCases()
         
-        for cs in cases {
+        for cs in _cases {
             if cs.country.range(of: keyword, options: .caseInsensitive) != nil {
                 result.append(cs)
+            }
+        }
+        
+        return result
+    }
+    
+    public func getTotalGlobalCases (completionHandler: @escaping (TotalCases) -> (Void), errorHandler: @escaping (String) -> (Void)) {
+        
+        Services.getTotalGlobalCases(completionHandler: {(response) -> (Void) in
+            
+            let total:TotalCases = TotalCases.init(dict: response.toDictionary()!)
+            completionHandler(total)
+            
+        }, errorHandler: {(error) -> (Void) in
+            errorHandler(error)
+        })
+    }
+    
+    public func getSavedGlobalCases () -> TotalCases {
+        
+        let totalCases = TotalCases()
+        let _cases     = getSavedCases()
+        
+        for cs in _cases {
+            totalCases.totalConfirmed += cs.totalConfirmed
+            totalCases.totalRecovered += cs.totalRecovered
+            totalCases.totalDeaths += cs.totalDeaths
+        }
+        
+        return totalCases
+    }
+    
+    public func getToTalLocalCases () -> TotalCases {
+        return TotalCases(savedCase: findCaseByCode(countryCode: Locale.current.regionCode!))
+    }
+    
+    private func findCaseByCode (countryCode: String) -> Case {
+        
+        var result = Case()
+        let _cases = getSavedCases()
+        
+        for cs in _cases {
+            if cs.countryCode == countryCode {
+                result = cs
             }
         }
         

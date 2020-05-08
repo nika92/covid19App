@@ -34,4 +34,27 @@ class Services {
         task.resume()
         semaphore.wait()
     }
+    
+    static func getTotalGlobalCases (completionHandler: @escaping (Data) -> (Void), errorHandler: @escaping (String) -> (Void)) {
+
+        let semaphore = DispatchSemaphore (value: 0)
+
+        let urlString       = baseUrl + "world/total"
+        var request         = URLRequest(url: URL(string: urlString)!,timeoutInterval: Double.infinity)
+        request.httpMethod  = "GET"
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            guard let data = data else {
+                errorHandler(String(describing: error))
+                return
+            }
+
+            completionHandler(data)
+            semaphore.signal()
+        }
+
+        task.resume()
+        semaphore.wait()
+    }
 }

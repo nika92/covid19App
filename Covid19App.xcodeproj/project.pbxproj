@@ -27,6 +27,9 @@
 		09562D2B2464A7BD00C778A2 /* CustomTabBarC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09562D2A2464A7BD00C778A2 /* CustomTabBarC.swift */; };
 		09562D2F2464B25B00C778A2 /* CaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09562D2E2464B25B00C778A2 /* CaseCell.xib */; };
 		09562D312464B26600C778A2 /* CaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09562D302464B26600C778A2 /* CaseCell.swift */; };
+		09DEF6A924657645003DE8F5 /* TotalCasesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09DEF6A824657645003DE8F5 /* TotalCasesCell.xib */; };
+		09DEF6AB24657654003DE8F5 /* TotalCasesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DEF6AA24657654003DE8F5 /* TotalCasesCell.swift */; };
+		09DEF6AF2465810C003DE8F5 /* TotalCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DEF6AE2465810C003DE8F5 /* TotalCases.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +55,9 @@
 		09562D2A2464A7BD00C778A2 /* CustomTabBarC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarC.swift; sourceTree = "<group>"; };
 		09562D2E2464B25B00C778A2 /* CaseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CaseCell.xib; sourceTree = "<group>"; };
 		09562D302464B26600C778A2 /* CaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseCell.swift; sourceTree = "<group>"; };
+		09DEF6A824657645003DE8F5 /* TotalCasesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TotalCasesCell.xib; sourceTree = "<group>"; };
+		09DEF6AA24657654003DE8F5 /* TotalCasesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalCasesCell.swift; sourceTree = "<group>"; };
+		09DEF6AE2465810C003DE8F5 /* TotalCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalCases.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				09562D1F2464882900C778A2 /* Case.swift */,
+				09DEF6AE2465810C003DE8F5 /* TotalCases.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -225,6 +232,8 @@
 			children = (
 				09562D2E2464B25B00C778A2 /* CaseCell.xib */,
 				09562D302464B26600C778A2 /* CaseCell.swift */,
+				09DEF6A824657645003DE8F5 /* TotalCasesCell.xib */,
+				09DEF6AA24657654003DE8F5 /* TotalCasesCell.swift */,
 			);
 			path = Case;
 			sourceTree = "<group>";
@@ -291,6 +300,7 @@
 				09562D2F2464B25B00C778A2 /* CaseCell.xib in Resources */,
 				09562CF5246468B500C778A2 /* Assets.xcassets in Resources */,
 				09562CF0246468B200C778A2 /* Main.storyboard in Resources */,
+				09DEF6A924657645003DE8F5 /* TotalCasesCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,7 +315,9 @@
 				09562D312464B26600C778A2 /* CaseCell.swift in Sources */,
 				09562D202464882900C778A2 /* Case.swift in Sources */,
 				09562D1C2464881500C778A2 /* SavedCase+CoreDataClass.swift in Sources */,
+				09DEF6AB24657654003DE8F5 /* TotalCasesCell.swift in Sources */,
 				09562CE9246468B200C778A2 /* AppDelegate.swift in Sources */,
+				09DEF6AF2465810C003DE8F5 /* TotalCases.swift in Sources */,
 				09562D2624649DC300C778A2 /* CustomNavC.swift in Sources */,
 				09562D052464697C00C778A2 /* StatsVC.swift in Sources */,
 				09562D1624647E1500C778A2 /* Constants.swift in Sources */,
