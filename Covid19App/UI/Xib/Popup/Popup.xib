@@ -14,7 +14,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sro-l1-tdh">
-                    <rect key="frame" x="16" y="0.0" width="382" height="80"/>
+                    <rect key="frame" x="16" y="16" width="382" height="64"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -23,7 +23,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <accessibility key="accessibilityConfiguration" identifier="Popup"/>
             <constraints>
-                <constraint firstItem="sro-l1-tdh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="NUb-0q-WgL"/>
+                <constraint firstItem="sro-l1-tdh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="NUb-0q-WgL"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="sro-l1-tdh" secondAttribute="bottom" id="QJ3-ah-YXc"/>
                 <constraint firstItem="sro-l1-tdh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="SUQ-SJ-GrP"/>
                 <constraint firstAttribute="trailing" secondItem="sro-l1-tdh" secondAttribute="trailing" constant="16" id="Xzu-b5-0f6"/>

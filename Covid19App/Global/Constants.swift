@@ -8,5 +8,6 @@
 
 class Constants {
     
-    
+    static let NO_CONNECTION       = "No Connection"
+    static let DATA_NOT_UPDATED    = "No Connection, Data Is Not Updated"
 }

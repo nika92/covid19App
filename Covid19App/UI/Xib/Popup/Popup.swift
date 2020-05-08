@@ -19,7 +19,6 @@ class Popup: UIView {
     var popup: Popup!
     
     private var height = 80
-    private var width  = 1000
     
     func show (message: String) {
         
@@ -37,7 +36,7 @@ class Popup: UIView {
          
         UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseInOut, animations: {
            
-            popup.frame = CGRect(x: 0, y: 0, width: self.width, height: self.height)
+            popup.frame = CGRect(x: 0, y: 0, width: Int(UIScreen.main.bounds.width), height: self.height)
             
         }) { (isCompleted) in
             self.isShown = true
@@ -52,7 +51,7 @@ class Popup: UIView {
         }
         
         UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseInOut, animations: {
-            popup.frame = CGRect(x: 0, y: -100, width: self.width, height: self.height)
+            popup.frame = CGRect(x: 0, y: -100, width: Int(UIScreen.main.bounds.width), height: self.height)
         }) { (isCompleted) in
             popup.removeFromSuperview()
             self.isShown = false
@@ -65,7 +64,7 @@ class Popup: UIView {
     
     private func styleView (popup: Popup) {
         
-        popup.frame = CGRect(x: 0, y: -100, width: self.width, height: self.height)
+        popup.frame = CGRect(x: 0, y: -100, width: Int(UIScreen.main.bounds.width), height: self.height)
         popup.backgroundColor       = StyleUtils.appGreyColor()
         popup.titleLbl.textColor    = StyleUtils.appBgColor()
         

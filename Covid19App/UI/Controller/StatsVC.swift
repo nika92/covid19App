@@ -114,7 +114,7 @@ class StatsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
     }
     
     @IBAction func segmentedControlAction(_ sender: Any) {
-        Popup.shared.show(message: "asdklansdas")
+        
         if segmentedControl.selectedSegmentIndex == 0 {
             
             showSearchBar(show: true)
@@ -208,27 +208,29 @@ class StatsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
     
     func handleTotalCasesErrorCallback () {
         
-        self.totalCase = CaseProvider.shared.getSavedGlobalCases()
-        
-        if self.totalCase!.isEmpty {
-            //Show no data notification
-        } else {
-            //Show saved data notification
-        }
-        
         DispatchQueue.main.async {
+            
+            self.totalCase = CaseProvider.shared.getSavedGlobalCases()
+            
+            if self.totalCase!.isEmpty {
+                Popup.shared.show(message: Constants.NO_CONNECTION)
+            } else {
+                Popup.shared.show(message: Constants.DATA_NOT_UPDATED)
+            }
+        
             self.reloadTableView()
         }
     }
     
     func handleErrorCallback () {
         
-        if items.count == 0 {
-            //Show no data notification
-        } else {
-            //Show saved data notification
-            DispatchQueue.main.async {
-                self.reloadTableView()
+        DispatchQueue.main.async {
+            
+            if self.items.count == 0 {
+                Popup.shared.show(message: Constants.NO_CONNECTION)
+            } else {
+                Popup.shared.show(message: Constants.DATA_NOT_UPDATED)
+                    self.reloadTableView()
             }
         }
     }

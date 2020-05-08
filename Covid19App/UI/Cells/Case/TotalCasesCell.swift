@@ -55,6 +55,10 @@ class TotalCasesCell: UITableViewCell {
     
     func setupWithTotalCases (totalCases: TotalCases) {
         
+        if totalCases.isEmpty {
+            return
+        }
+        
         totalConfirmedLbl.text = String(totalCases.totalConfirmed)
         totalRecoveredLbl.text = String(totalCases.totalRecovered)
         totalDeathsLbl.text    = String(totalCases.totalDeaths)
