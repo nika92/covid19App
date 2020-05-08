@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ArJ-vE-mSE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nao-dm-4Fe">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,11 +12,11 @@
             <objects>
                 <viewController id="6yE-yu-FIQ" customClass="StatsVC" customModule="Covid19App" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9ht-lW-jUT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1nJ-6f-7OK">
-                                <rect key="frame" x="16" y="98" width="382" height="32"/>
+                                <rect key="frame" x="16" y="10" width="382" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="HsM-99-MYH"/>
                                 </constraints>
@@ -30,7 +30,7 @@
                                 </connections>
                             </segmentedControl>
                             <searchBar contentMode="redraw" placeholder="Country" translatesAutoresizingMaskIntoConstraints="NO" id="gwV-0I-dZd">
-                                <rect key="frame" x="8" y="141" width="398" height="44"/>
+                                <rect key="frame" x="8" y="53" width="398" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="3fI-EM-Wnc"/>
                                 </constraints>
@@ -38,7 +38,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3XM-4g-dD4">
-                                <rect key="frame" x="16" y="195" width="382" height="693"/>
+                                <rect key="frame" x="16" y="107" width="382" height="693"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
@@ -69,26 +69,6 @@
             </objects>
             <point key="canvasLocation" x="2815.9420289855075" y="138.61607142857142"/>
         </scene>
-        <!--Custom Tab BarC-->
-        <scene sceneID="DQP-4U-sgq">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ArJ-vE-mSE" customClass="CustomTabBarC" customModule="Covid19App" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="eWV-Sp-l18"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vtb-2w-Wdm">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="nao-dm-4Fe" kind="relationship" relationship="viewControllers" id="XbI-d1-y4e"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="555-do-Kfe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="995.65217391304361" y="138.61607142857142"/>
-        </scene>
         <!--Stats-->
         <scene sceneID="PRi-1b-O8Z">
             <objects>
@@ -97,7 +77,7 @@
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aWR-Xn-ED8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="aWR-Xn-ED8">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

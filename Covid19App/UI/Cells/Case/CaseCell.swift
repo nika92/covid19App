@@ -27,6 +27,7 @@ class CaseCell: UITableViewCell {
         
         backgroundColor = .clear
         
+        countryLbl.textColor    = StyleUtils.appColor(.title)
         totalLbl.textColor      = StyleUtils.appGreenColor()
         recoveredLbl.textColor  = StyleUtils.appBlueColor()
         deathLbl.textColor      = StyleUtils.appRedColor()

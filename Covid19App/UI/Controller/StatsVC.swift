@@ -80,6 +80,8 @@ class StatsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        overrideUserInterfaceStyle = .dark
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -112,7 +114,7 @@ class StatsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
     }
     
     @IBAction func segmentedControlAction(_ sender: Any) {
-        
+        Popup.shared.show(message: "asdklansdas")
         if segmentedControl.selectedSegmentIndex == 0 {
             
             showSearchBar(show: true)

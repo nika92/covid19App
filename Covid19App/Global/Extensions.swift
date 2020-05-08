@@ -48,3 +48,15 @@ extension UIImage {
         return newImage!
     }
 }
+
+extension UIView {
+
+    func setShadow () {
+        
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOffset = CGSize(width: 0, height: 3)
+        self.layer.shadowOpacity = 5.0
+        self.layer.shadowRadius = 10.0
+        self.layer.masksToBounds = false
+    }
+}

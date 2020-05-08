@@ -14,6 +14,6 @@ class CustomNavC: UINavigationController {
         super.viewWillAppear(animated)
         
         navigationBar.topItem?.title = "COVID 19"
-        navigationBar.barTintColor   = StyleUtils.appBgColor()
+        navigationBar.barTintColor   = StyleUtils.appColor(.background)
     }
 }

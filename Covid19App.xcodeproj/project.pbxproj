@@ -24,12 +24,13 @@
 		09562D202464882900C778A2 /* Case.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09562D1F2464882900C778A2 /* Case.swift */; };
 		09562D2624649DC300C778A2 /* CustomNavC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09562D2524649DC300C778A2 /* CustomNavC.swift */; };
 		09562D2924649E1D00C778A2 /* StyleUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09562D2824649E1D00C778A2 /* StyleUtils.swift */; };
-		09562D2B2464A7BD00C778A2 /* CustomTabBarC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09562D2A2464A7BD00C778A2 /* CustomTabBarC.swift */; };
 		09562D2F2464B25B00C778A2 /* CaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09562D2E2464B25B00C778A2 /* CaseCell.xib */; };
 		09562D312464B26600C778A2 /* CaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09562D302464B26600C778A2 /* CaseCell.swift */; };
 		09DEF6A924657645003DE8F5 /* TotalCasesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09DEF6A824657645003DE8F5 /* TotalCasesCell.xib */; };
 		09DEF6AB24657654003DE8F5 /* TotalCasesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DEF6AA24657654003DE8F5 /* TotalCasesCell.swift */; };
 		09DEF6AF2465810C003DE8F5 /* TotalCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DEF6AE2465810C003DE8F5 /* TotalCases.swift */; };
+		09DEF6B32465A289003DE8F5 /* Popup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09DEF6B22465A289003DE8F5 /* Popup.xib */; };
+		09DEF6B52465A292003DE8F5 /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DEF6B42465A292003DE8F5 /* Popup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,12 +53,13 @@
 		09562D1F2464882900C778A2 /* Case.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case.swift; sourceTree = "<group>"; };
 		09562D2524649DC300C778A2 /* CustomNavC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavC.swift; sourceTree = "<group>"; };
 		09562D2824649E1D00C778A2 /* StyleUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleUtils.swift; sourceTree = "<group>"; };
-		09562D2A2464A7BD00C778A2 /* CustomTabBarC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarC.swift; sourceTree = "<group>"; };
 		09562D2E2464B25B00C778A2 /* CaseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CaseCell.xib; sourceTree = "<group>"; };
 		09562D302464B26600C778A2 /* CaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseCell.swift; sourceTree = "<group>"; };
 		09DEF6A824657645003DE8F5 /* TotalCasesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TotalCasesCell.xib; sourceTree = "<group>"; };
 		09DEF6AA24657654003DE8F5 /* TotalCasesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalCasesCell.swift; sourceTree = "<group>"; };
 		09DEF6AE2465810C003DE8F5 /* TotalCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalCases.swift; sourceTree = "<group>"; };
+		09DEF6B22465A289003DE8F5 /* Popup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Popup.xib; sourceTree = "<group>"; };
+		09DEF6B42465A292003DE8F5 /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +97,8 @@
 				09562D0E24647C3300C778A2 /* Global */,
 				09562D0624646A5100C778A2 /* Network */,
 				09562CFF246468D100C778A2 /* CoreData */,
-				09562D00246468E200C778A2 /* Supporting */,
 				09562D022464690400C778A2 /* UI */,
+				09562D00246468E200C778A2 /* Supporting */,
 				09562CEE246468B200C778A2 /* Main.storyboard */,
 				09562CF6246468B500C778A2 /* LaunchScreen.storyboard */,
 				09562CF9246468B500C778A2 /* Info.plist */,
@@ -127,6 +129,7 @@
 		09562D022464690400C778A2 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				09DEF6B02465A275003DE8F5 /* Xib */,
 				09562D2C2464B22D00C778A2 /* Cells */,
 				09562D032464691400C778A2 /* Controller */,
 			);
@@ -206,7 +209,6 @@
 			isa = PBXGroup;
 			children = (
 				09562D2524649DC300C778A2 /* CustomNavC.swift */,
-				09562D2A2464A7BD00C778A2 /* CustomTabBarC.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -236,6 +238,23 @@
 				09DEF6AA24657654003DE8F5 /* TotalCasesCell.swift */,
 			);
 			path = Case;
+			sourceTree = "<group>";
+		};
+		09DEF6B02465A275003DE8F5 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				09DEF6B12465A27D003DE8F5 /* Popup */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
+		09DEF6B12465A27D003DE8F5 /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				09DEF6B22465A289003DE8F5 /* Popup.xib */,
+				09DEF6B42465A292003DE8F5 /* Popup.swift */,
+			);
+			path = Popup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +315,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09DEF6B32465A289003DE8F5 /* Popup.xib in Resources */,
 				09562CF8246468B500C778A2 /* LaunchScreen.storyboard in Resources */,
 				09562D2F2464B25B00C778A2 /* CaseCell.xib in Resources */,
 				09562CF5246468B500C778A2 /* Assets.xcassets in Resources */,
@@ -311,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09DEF6B52465A292003DE8F5 /* Popup.swift in Sources */,
 				09562D0A24646A6A00C778A2 /* Services.swift in Sources */,
 				09562D312464B26600C778A2 /* CaseCell.swift in Sources */,
 				09562D202464882900C778A2 /* Case.swift in Sources */,
@@ -327,7 +348,6 @@
 				09562D1924647EAC00C778A2 /* PersistenceManager.swift in Sources */,
 				09562D2924649E1D00C778A2 /* StyleUtils.swift in Sources */,
 				09562D1024647C3C00C778A2 /* Extensions.swift in Sources */,
-				09562D2B2464A7BD00C778A2 /* CustomTabBarC.swift in Sources */,
 				09562D1D2464881500C778A2 /* SavedCase+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
