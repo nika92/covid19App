@@ -153,7 +153,7 @@ class StatsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
         }
     }
     
-    func fetchAllCases () {
+    @objc func fetchAllCases () {
         
         DispatchQueue.global(qos: .userInitiated).async {
          
@@ -188,6 +188,7 @@ class StatsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
         }
     }
     
+    var refreshControl = UIRefreshControl()
     func setupTableView () {
         
         tableView.delegate   = self
