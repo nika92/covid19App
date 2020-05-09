@@ -69,13 +69,10 @@
             </objects>
             <point key="canvasLocation" x="2815.9420289855075" y="138.61607142857142"/>
         </scene>
-        <!--Stats-->
+        <!--Custom NavC-->
         <scene sceneID="PRi-1b-O8Z">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nao-dm-4Fe" customClass="CustomNavC" customModule="Covid19App" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Stats" image="stats_icon" id="EZe-Ob-aSE">
-                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="aWR-Xn-ED8">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -91,7 +88,4 @@
             <point key="canvasLocation" x="1905.7971014492755" y="138.61607142857142"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="stats_icon" width="24" height="24"/>
-    </resources>
 </document>

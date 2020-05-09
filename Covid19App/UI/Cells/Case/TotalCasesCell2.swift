@@ -1,16 +1,16 @@
 //
-//  TotalCasesCell.swift
+//  TotalCasesCell2.swift
 //  Covid19App
 //
-//  Created by Nika Chkadua on 5/8/20.
+//  Created by Nika Chkadua on 5/9/20.
 //  Copyright © 2020 Nika Chkadua. All rights reserved.
 //
 
 import UIKit
 
-class TotalCasesCell: UITableViewCell {
+class TotalCasesCell2: UITableViewCell {
     
-    static let reuseIdentifier = "TotalCasesCell"
+    static let reuseIdentifier = "TotalCasesCell2"
     
     @IBOutlet weak var confirmedView: UIView!
     @IBOutlet weak var recoveredView: UIView!
@@ -66,4 +66,6 @@ class TotalCasesCell: UITableViewCell {
         let percent = totalCases.totalRecovered * 100 / totalCases.totalConfirmed
         percentageLbl.text = "RECOVERED " + String(percent) + "%"
     }
+    
+    
 }

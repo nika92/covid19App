@@ -42,16 +42,32 @@ class StatsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
             return cell
         } else {
             
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: TotalCasesCell.reuseIdentifier, for: indexPath) as? TotalCasesCell else {
-                preconditionFailure("Invalid cell type")
+            if UIDevice.current.userInterfaceIdiom == .phone {
+                
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: TotalCasesCell.reuseIdentifier, for: indexPath) as? TotalCasesCell else {
+                    preconditionFailure("Invalid cell type")
+                }
+                cell.selectionStyle = .none
+                
+                if let _totalCase = self.totalCase {
+                    cell.setupWithTotalCases(totalCases: _totalCase)
+                }
+                
+                return cell
+                
+            } else {
+                
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: TotalCasesCell2.reuseIdentifier, for: indexPath) as? TotalCasesCell2 else {
+                    preconditionFailure("Invalid cell type")
+                }
+                cell.selectionStyle = .none
+                
+                if let _totalCase = self.totalCase {
+                    cell.setupWithTotalCases(totalCases: _totalCase)
+                }
+                
+                return cell
             }
-            cell.selectionStyle = .none
-            
-            if let _totalCase = self.totalCase {
-                cell.setupWithTotalCases(totalCases: _totalCase)
-            }
-            
-            return cell
         }
     }
     
@@ -60,7 +76,12 @@ class StatsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
         if listSelected {
             return 44
         } else {
-            return 260
+            
+            if UIDevice.current.userInterfaceIdiom == .phone {
+                return 260
+            } else {
+                return 130
+            }
         }
     }
     
@@ -99,7 +120,7 @@ class StatsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
         //SegmentedControl
         segmentedControl.backgroundColor = StyleUtils.appGreyColor()
         segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
-        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: StyleUtils.appGreyColor()], for: .selected)
+        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: StyleUtils.appBgColor()], for: .selected)
         
         //SearchBar
         searchBar.barTintColor                      = StyleUtils.appBgColor()
@@ -107,7 +128,7 @@ class StatsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
         searchBar.searchTextField.backgroundColor   = StyleUtils.appGreyColor()
         searchBar.searchTextField.textColor         = .white
         searchBar.searchTextField.font              = UIFont.systemFont(ofSize: 15)
-        searchBar.setImage(UIImage(named: "search_icon"), for: .search, state: .normal)
+        searchBar.setImage(StyleUtils.appImage(.search), for: .search, state: .normal)
         
         searchBar.delegate = self
         searchBar.searchTextField.delegate = self
@@ -198,6 +219,7 @@ class StatsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
         
         tableView.register(UINib(nibName: CaseCell.reuseIdentifier, bundle: Bundle.main), forCellReuseIdentifier: CaseCell.reuseIdentifier)
         tableView.register(UINib(nibName: TotalCasesCell.reuseIdentifier, bundle: Bundle.main), forCellReuseIdentifier: TotalCasesCell.reuseIdentifier)
+        tableView.register(UINib(nibName: TotalCasesCell2.reuseIdentifier, bundle: Bundle.main), forCellReuseIdentifier: TotalCasesCell2.reuseIdentifier)
     }
     
     func reloadTableView () {
@@ -212,13 +234,6 @@ class StatsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
         DispatchQueue.main.async {
             
             self.totalCase = CaseProvider.shared.getSavedGlobalCases()
-            
-            if self.totalCase!.isEmpty {
-                Popup.shared.show(message: Constants.NO_CONNECTION)
-            } else {
-                Popup.shared.show(message: Constants.DATA_NOT_UPDATED)
-            }
-        
             self.reloadTableView()
         }
     }
@@ -231,7 +246,7 @@ class StatsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIS
                 Popup.shared.show(message: Constants.NO_CONNECTION)
             } else {
                 Popup.shared.show(message: Constants.DATA_NOT_UPDATED)
-                    self.reloadTableView()
+                self.reloadTableView()
             }
         }
     }

@@ -9,14 +9,24 @@
 import UIKit
 
 enum AssetsColor : String {
-  case background
-  case title
+    case background
+    case title
+}
+
+enum AssetsImage : String {
+    case search
+    case heart
+    case checkmark
 }
 
 class StyleUtils {
     
-    static func appColor(_ name: AssetsColor) -> UIColor? {
+    static func appColor (_ name: AssetsColor) -> UIColor? {
        return UIColor(named: name.rawValue)
+    }
+    
+    static func appImage (_ name: AssetsImage) -> UIImage? {
+        return UIImage(named: name.rawValue)
     }
     
     static func appBgColor (alpha: CGFloat? = 1.0) -> UIColor {

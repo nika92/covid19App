@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0954929F246725DB00A210BA /* TotalCasesCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0954929E246725DB00A210BA /* TotalCasesCell2.xib */; };
+		095492A1246725E700A210BA /* TotalCasesCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095492A0246725E700A210BA /* TotalCasesCell2.swift */; };
 		09562CE9246468B200C778A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09562CE8246468B200C778A2 /* AppDelegate.swift */; };
 		09562CEB246468B200C778A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09562CEA246468B200C778A2 /* SceneDelegate.swift */; };
 		09562CF0246468B200C778A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09562CEE246468B200C778A2 /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0954929E246725DB00A210BA /* TotalCasesCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TotalCasesCell2.xib; sourceTree = "<group>"; };
+		095492A0246725E700A210BA /* TotalCasesCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalCasesCell2.swift; sourceTree = "<group>"; };
 		09562CE5246468B200C778A2 /* Covid19App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Covid19App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09562CE8246468B200C778A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09562CEA246468B200C778A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -236,6 +240,8 @@
 				09562D302464B26600C778A2 /* CaseCell.swift */,
 				09DEF6A824657645003DE8F5 /* TotalCasesCell.xib */,
 				09DEF6AA24657654003DE8F5 /* TotalCasesCell.swift */,
+				0954929E246725DB00A210BA /* TotalCasesCell2.xib */,
+				095492A0246725E700A210BA /* TotalCasesCell2.swift */,
 			);
 			path = Case;
 			sourceTree = "<group>";
@@ -315,6 +321,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0954929F246725DB00A210BA /* TotalCasesCell2.xib in Resources */,
 				09DEF6B32465A289003DE8F5 /* Popup.xib in Resources */,
 				09562CF8246468B500C778A2 /* LaunchScreen.storyboard in Resources */,
 				09562D2F2464B25B00C778A2 /* CaseCell.xib in Resources */,
@@ -339,6 +346,7 @@
 				09DEF6AB24657654003DE8F5 /* TotalCasesCell.swift in Sources */,
 				09562CE9246468B200C778A2 /* AppDelegate.swift in Sources */,
 				09DEF6AF2465810C003DE8F5 /* TotalCases.swift in Sources */,
+				095492A1246725E700A210BA /* TotalCasesCell2.swift in Sources */,
 				09562D2624649DC300C778A2 /* CustomNavC.swift in Sources */,
 				09562D052464697C00C778A2 /* StatsVC.swift in Sources */,
 				09562D1624647E1500C778A2 /* Constants.swift in Sources */,

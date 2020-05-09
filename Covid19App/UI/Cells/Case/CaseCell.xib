@@ -41,7 +41,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ng7-dB-WvK">
-                    <rect key="frame" x="0.0" y="12.5" width="201" height="19.5"/>
+                    <rect key="frame" x="0.0" y="12.5" width="216" height="19.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <nil key="textColor"/>
@@ -56,7 +56,7 @@
                 <constraint firstItem="Hy9-a4-3zd" firstAttribute="centerY" secondItem="noA-rz-YqQ" secondAttribute="centerY" id="Efw-XJ-Z0B"/>
                 <constraint firstItem="i0h-rh-Ehg" firstAttribute="height" secondItem="Hy9-a4-3zd" secondAttribute="height" id="IA3-35-OVQ"/>
                 <constraint firstItem="Hy9-a4-3zd" firstAttribute="leading" secondItem="i0h-rh-Ehg" secondAttribute="trailing" constant="4" id="Isd-4y-I7p"/>
-                <constraint firstItem="i0h-rh-Ehg" firstAttribute="leading" secondItem="Ng7-dB-WvK" secondAttribute="trailing" constant="25" id="MoO-Rk-IgS"/>
+                <constraint firstItem="i0h-rh-Ehg" firstAttribute="leading" secondItem="Ng7-dB-WvK" secondAttribute="trailing" constant="10" id="MoO-Rk-IgS"/>
                 <constraint firstItem="Hy9-a4-3zd" firstAttribute="height" secondItem="noA-rz-YqQ" secondAttribute="height" multiplier="0.472222" id="Pxo-Rf-RKe"/>
                 <constraint firstItem="i0h-rh-Ehg" firstAttribute="centerY" secondItem="Hy9-a4-3zd" secondAttribute="centerY" id="R4a-gT-ZoL"/>
                 <constraint firstItem="Ng7-dB-WvK" firstAttribute="centerY" secondItem="i0h-rh-Ehg" secondAttribute="centerY" id="ax2-kt-ieF"/>

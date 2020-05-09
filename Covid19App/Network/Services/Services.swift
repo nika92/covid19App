@@ -23,7 +23,7 @@ class Services {
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             
             guard let data = data else {
-                print(String(describing: error))
+//                print(String(describing: error))
                 errorHandler(String(describing: error))
                 return
             }

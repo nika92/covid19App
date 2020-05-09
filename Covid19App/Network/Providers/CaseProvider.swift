@@ -104,7 +104,12 @@ class CaseProvider {
     }
     
     public func getToTalLocalCases () -> TotalCases {
-        return TotalCases(savedCase: findCaseByCode(countryCode: Locale.current.regionCode!))
+        
+        if let regionCode = Locale.current.regionCode {
+            return TotalCases(savedCase: findCaseByCode(countryCode: regionCode))
+        }
+        
+        return TotalCases()
     }
     
     private func findCaseByCode (countryCode: String) -> Case {
