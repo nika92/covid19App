@@ -60,9 +60,9 @@ class Case: NSObject {
         savedCase.country           = self.country
         savedCase.countryCode       = self.countryCode
         savedCase.date              = self.date
-        savedCase.newConfirmed      = Int16(self.newConfirmed)
-        savedCase.newDeaths         = Int16(self.newDeaths)
-        savedCase.newRecovered      = Int16(self.newRecovered)
+        savedCase.newConfirmed      = Int64(self.newConfirmed)
+        savedCase.newDeaths         = Int64(self.newDeaths)
+        savedCase.newRecovered      = Int64(self.newRecovered)
         savedCase.slug              = self.slug
         savedCase.totalConfirmed    = Int64(self.totalConfirmed)
         savedCase.totalDeaths       = Int64(self.totalDeaths)
